@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>me.ffs.www</groupId>
-	<artifactId>zsh_pay_pushCoupons</artifactId>
+	<artifactId>wx_test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>zsh_pay_pushCoupons</name>
-	<description>中石化车主卡项目前端缴费流程</description>
+	<name>wx_test</name>
+	<description>微信测试</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
