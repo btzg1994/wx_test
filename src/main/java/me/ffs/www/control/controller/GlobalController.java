@@ -36,4 +36,9 @@ public class GlobalController {
 	public String getToken(){
 		return PublicService.access_token;
 	}
+	
+	@RequestMapping("contact")
+	public String contact(){
+		return "contact";
+	}
 }
