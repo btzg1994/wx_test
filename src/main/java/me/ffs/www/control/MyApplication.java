@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
 import tk.mybatis.spring.annotation.MapperScan;
 
 
@@ -18,6 +20,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @ComponentScan(basePackages={"me.ffs"})
 @SpringBootApplication
 @EnableCaching
+@EnableScheduling
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class MyApplication {
 
