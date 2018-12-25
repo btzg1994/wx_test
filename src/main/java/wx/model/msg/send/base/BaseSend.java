@@ -1,14 +1,14 @@
-package wx.model.msg.receive;
+package wx.model.msg.send.base;
 
-public class BaseReceive {
+public class BaseSend {
 	
 	/**
-	 * 开发者 微信号
+	 * 接收方帐号（收到的OpenID）
 	 */
 	private String toUserName;
 	
 	/**
-	 * 发送方帐号（一个OpenID）
+	 * 开发者微信号
 	 */
 	private String fromUserName;
 	
@@ -23,11 +23,11 @@ public class BaseReceive {
 	private String msgType;
 	
 	
-	public BaseReceive() {
+	public BaseSend() {
 		super();
 	}
 
-	public BaseReceive(String toUserName, String fromUserName, String createTime, String msgType) {
+	public BaseSend(String toUserName, String fromUserName, String createTime, String msgType) {
 		super();
 		this.toUserName = toUserName;
 		this.fromUserName = fromUserName;

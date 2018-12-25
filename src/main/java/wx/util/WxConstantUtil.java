@@ -44,6 +44,14 @@ public class WxConstantUtil {
 
 	public static final String EVENT_TYPE_LOCATION_SELECT = "location_select";
 
+	public static final String EVENT_TYPE_SUBSCRIBE = "subscribe";
+	
+	public static final String EVENT_TYPE_UNSUBSCRIBE = "unsubscribe";
+	
+	public static final String EVENT_TYPE_SCAN = "SCAN";
+	
+	public static final String EVENT_TYPE_LOCATION = "LOCATION";
+	
 	//message type------------------------------------------------------------------------------------
 	
 	public static final String MSG_TYPE_EVENT = "event";

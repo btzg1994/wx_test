@@ -1,9 +1,16 @@
 package wx.model.msg.receive;
 
-public class MenuTypeViewReceive extends EventReceive{
+import wx.model.msg.receive.base.EventRec;
+
+/**
+ * view类型菜单的推送体
+ * @author btzg
+ * @time 2018年12月25日 上午10:39:25
+ */
+public class EventMenuViewRec extends EventRec{
 	
 	/**
-	 * 事件KEY值，与自定义菜单接口中KEY值对应
+	 * 事件KEY值，设置的跳转URL
 	 */
 	private String eventKey;
 	
@@ -12,11 +19,11 @@ public class MenuTypeViewReceive extends EventReceive{
 	 */
 	private String menuId;
 
-	public MenuTypeViewReceive() {
+	public EventMenuViewRec() {
 		super();
 	}
 	
-	public MenuTypeViewReceive(String toUserName, String fromUserName, String createTime, String msgType, String event, String eventKey,String menuId) {
+	public EventMenuViewRec(String toUserName, String fromUserName, String createTime, String msgType, String event, String eventKey,String menuId) {
 		super(toUserName, fromUserName, createTime, msgType, event);
 		this.eventKey = eventKey;
 		this.menuId = menuId;

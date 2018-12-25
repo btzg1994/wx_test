@@ -1,6 +1,11 @@
-package wx.model.msg.receive;
+package wx.model.msg.receive.base;
 
-public class EventReceive extends BaseReceive{
+/**
+ * 事件推送
+ * @author btzg
+ * @time 2018年12月25日 上午10:48:01
+ */
+public class EventRec extends BaseRec{
 	
 	/**
 	 * 事件类型
@@ -8,11 +13,11 @@ public class EventReceive extends BaseReceive{
 	private String event;
 
 	
-	public EventReceive() {
+	public EventRec() {
 		super();
 	}
 	
-	public EventReceive( String toUserName, String fromUserName, String createTime, String msgType,String event) {
+	public EventRec( String toUserName, String fromUserName, String createTime, String msgType,String event) {
 		super(toUserName, fromUserName, createTime, msgType);
 		this.event = event;
 	}

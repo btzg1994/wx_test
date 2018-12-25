@@ -2,7 +2,14 @@ package wx.model.msg.receive;
 
 import java.util.List;
 
-public class MenuTypePicReceive extends EventReceive{
+import wx.model.msg.receive.base.EventRec;
+
+/**
+ * 拉取图片类型的菜单推送体
+ * @author btzg
+ * @time 2018年12月25日 上午10:38:30
+ */
+public class EventMenuPicRec extends EventRec{
 	
 	/**
 	 * 事件KEY值，与自定义菜单接口中KEY值对应
@@ -19,11 +26,11 @@ public class MenuTypePicReceive extends EventReceive{
 	 */
 	private List<String> picMd5Sums;  
 
-	public MenuTypePicReceive() {
+	public EventMenuPicRec() {
 		super();
 	}
 	
-	public MenuTypePicReceive(String toUserName, String fromUserName, String createTime, String msgType, String event, String eventKey,String count,List<String> picMd5Sums) {
+	public EventMenuPicRec(String toUserName, String fromUserName, String createTime, String msgType, String event, String eventKey,String count,List<String> picMd5Sums) {
 		super(toUserName, fromUserName, createTime, msgType, event);
 		this.eventKey = eventKey;
 		this.count = count;

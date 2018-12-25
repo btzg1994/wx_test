@@ -1,6 +1,13 @@
 package wx.model.msg.receive;
 
-public class MenuTypeLocationSelectReceive extends EventReceive {
+import wx.model.msg.receive.base.EventRec;
+
+/**
+ * 位置选择类型菜单的推送体
+ * @author btzg
+ * @time 2018年12月25日 上午10:38:00
+ */
+public class EventMenuLocationSelectRec extends EventRec {
 
 	/**
 	 * 事件KEY值，与自定义菜单接口中KEY值对应
@@ -32,11 +39,11 @@ public class MenuTypeLocationSelectReceive extends EventReceive {
 	 */
 	private String poiname;
 
-	public MenuTypeLocationSelectReceive() {
+	public EventMenuLocationSelectRec() {
 		super();
 	}
 
-	public MenuTypeLocationSelectReceive( String toUserName, String fromUserName, String createTime, String msgType, String event,String eventKey, String locationX, String locationY, String scale,
+	public EventMenuLocationSelectRec( String toUserName, String fromUserName, String createTime, String msgType, String event,String eventKey, String locationX, String locationY, String scale,
 			String label, String poiname) {
 		super(toUserName, fromUserName, createTime, msgType, event);
 		this.eventKey = eventKey;

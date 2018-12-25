@@ -1,6 +1,13 @@
 package wx.model.msg.receive;
 
-public class MenuTypeScanCodeReceive extends EventReceive{
+import wx.model.msg.receive.base.EventRec;
+
+/**
+ * 扫码类型菜单的推送体
+ * @author btzg
+ * @time 2018年12月25日 上午10:39:03
+ */
+public class EventMenuScanCodeRec extends EventRec{
 	
 	/**
 	 * 事件KEY值，与自定义菜单接口中KEY值对应
@@ -17,11 +24,11 @@ public class MenuTypeScanCodeReceive extends EventReceive{
 	 */
 	private String scanResult;
 
-	public MenuTypeScanCodeReceive() {
+	public EventMenuScanCodeRec() {
 		super();
 	}
 	
-	public MenuTypeScanCodeReceive(String toUserName, String fromUserName, String createTime, String msgType, String event, String eventKey,String scanType,String scanResult) {
+	public EventMenuScanCodeRec(String toUserName, String fromUserName, String createTime, String msgType, String event, String eventKey,String scanType,String scanResult) {
 		super(toUserName, fromUserName, createTime, msgType, event);
 		this.eventKey = eventKey;
 		this.scanType = scanType;
