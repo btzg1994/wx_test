@@ -1,17 +1,11 @@
 package me.ffs.www.control.controller;
 
 
-import java.util.List;
 
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.parsers.SAXParser;
 
 import org.apache.commons.io.IOUtils;
-import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Node;
-import org.dom4j.io.SAXReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -24,6 +18,13 @@ import wx.model.msg.receive.EventMenuLocationSelectRec;
 import wx.model.msg.receive.EventMenuPicRec;
 import wx.model.msg.receive.EventMenuScanCodeRec;
 import wx.model.msg.receive.EventMenuViewRec;
+import wx.model.msg.receive.MsgImageRec;
+import wx.model.msg.receive.MsgLinkRec;
+import wx.model.msg.receive.MsgLocationRec;
+import wx.model.msg.receive.MsgShortVideoRec;
+import wx.model.msg.receive.MsgTextRec;
+import wx.model.msg.receive.MsgVideoRec;
+import wx.model.msg.receive.MsgVoiceRec;
 import wx.model.msg.receive.base.BaseRec;
 import wx.model.msg.receive.base.EventRec;
 import wx.util.ReceiveParser;
@@ -45,7 +46,7 @@ public class WxController {
 		
 		String msgType = receive.getMsgType();
 		
-		if(WxConstantUtil.MSG_TYPE_EVENT.equals(msgType)){
+		if(WxConstantUtil.MSG_TYPE_EVENT.equals(msgType)){//收到事件消息
 			EventRec eventReceive = (EventRec) receive;
 			String event = eventReceive.getEvent();
 			switch(event){
@@ -76,6 +77,28 @@ public class WxController {
 					break;
 				default:
 			}
+			
+		}else if(WxConstantUtil.MSG_TYPE_TEXT.equals(msgType)){//收到文本消息
+			MsgTextRec textRec = (MsgTextRec)receive;
+			System.out.println(textRec.getContent());
+			
+		}else if(WxConstantUtil.MSG_TYPE_IMAGE.equals(msgType)){//收到图片消息
+			MsgImageRec imageRec = (MsgImageRec) receive;
+			
+		}else if(WxConstantUtil.MSG_TYPE_VOICE.equals(msgType)){//收到语音消息
+			MsgVoiceRec voiceRec =  (MsgVoiceRec) receive;
+			
+		}else if(WxConstantUtil.MSG_TYPE_VIDEO.equals(msgType)){//收到视频消息
+			MsgVideoRec videoRec =  (MsgVideoRec) receive;
+			
+		}else if(WxConstantUtil.MSG_TYPE_SHORTVIDEO.equals(msgType)){//收到小视频消息
+			MsgShortVideoRec shortVideoRec =  (MsgShortVideoRec) receive;
+			
+		}else if(WxConstantUtil.MSG_TYPE_LOCATION.equals(msgType)){//收到地理位置消息
+			MsgLocationRec locationRec =  (MsgLocationRec) receive;
+			
+		}else if(WxConstantUtil.MSG_TYPE_LINK.equals(msgType)){//收到链接消息
+			MsgLinkRec  linkRec =  (MsgLinkRec) receive;
 		}
 		return "success";
 	}

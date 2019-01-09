@@ -19,16 +19,21 @@ public class MsgVoiceRec extends MsgRec{
 	 */
 	private String format;
 
+	/**
+	 * 语音识别结果，UTF8编码
+	 */
+	private String recognition;
 	
 	public MsgVoiceRec() {
 		super();
 	}
 	
 	
-	public MsgVoiceRec(String toUserName, String fromUserName, String createTime, String msgType, String msgId, String mediaId, String format) {
+	public MsgVoiceRec(String toUserName, String fromUserName, String createTime, String msgType, String msgId, String mediaId, String format,String recognition) {
 		super(toUserName, fromUserName, createTime, msgType, msgId);
 		this.mediaId = mediaId;
 		this.format = format;
+		this.recognition = recognition;
 	}
 
 	public String getMediaId() {
@@ -45,6 +50,14 @@ public class MsgVoiceRec extends MsgRec{
 
 	public void setFormat(String format) {
 		this.format = format;
+	}
+
+	public String getRecognition() {
+		return recognition;
+	}
+
+	public void setRecognition(String recognition) {
+		this.recognition = recognition;
 	}
 	
 	
